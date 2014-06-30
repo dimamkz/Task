@@ -1,6 +1,8 @@
 package ru.ifmo.enf.melnikovd.task;
 
 
+import java.util.Arrays;
+
 public class IncreasingSubsequenceFinderImpl implements IncreasingSubsequenceFinder{
     @Override
     public int findMaxLength(int[] input) {
@@ -8,9 +10,7 @@ public class IncreasingSubsequenceFinderImpl implements IncreasingSubsequenceFin
             return 0;
         }
         int[] length  = new int[input.length];
-        for (int i=1; i<length.length; i++) {
-            length[i] = Integer.MAX_VALUE;
-        }
+        Arrays.fill(length,Integer.MAX_VALUE);
         length[0]=1;
         for (int i=1; i<input.length; i++) {
             int max=0;
