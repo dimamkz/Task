@@ -11,8 +11,8 @@ public class MaxDiffPairTest {
         int[] input = {11, 1, 1, 4, 1, 5, 6, 9, 2};
         MaxDiffPair maxDiffPair = new MaxDiffPairImpl();
         MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
-        int ans = Math.abs(pair.x - pair.y);
-        Assert.assertEquals(10, ans);
+        Assert.assertEquals(1, pair.x);
+        Assert.assertEquals(11, pair.y);
     }
 
     @Test
@@ -20,8 +20,8 @@ public class MaxDiffPairTest {
         int[] input = {-10, -5, -11, 2, 0, 3, 5, 9, 15};
         MaxDiffPair maxDiffPair = new MaxDiffPairImpl();
         MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
-        int ans = Math.abs(pair.x - pair.y);
-        Assert.assertEquals(26, ans);
+        Assert.assertEquals(-11, pair.x);
+        Assert.assertEquals(15, pair.y);
     }
 
     @Test
@@ -29,8 +29,8 @@ public class MaxDiffPairTest {
         int[] input = {1, 10};
         MaxDiffPair maxDiffPair = new MaxDiffPairImpl();
         MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
-        int ans = Math.abs(pair.x - pair.y);
-        Assert.assertEquals(9, ans);
+        Assert.assertEquals(1, pair.x);
+        Assert.assertEquals(10, pair.y);
     }
 
     @Test
@@ -38,8 +38,8 @@ public class MaxDiffPairTest {
         int[] input = {-1, -10};
         MaxDiffPair maxDiffPair = new MaxDiffPairImpl();
         MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
-        int ans = Math.abs(pair.x - pair.y);
-        Assert.assertEquals(9, ans);
+        Assert.assertEquals(-10, pair.x);
+        Assert.assertEquals(-1, pair.y);
     }
 
     @Test
@@ -47,8 +47,8 @@ public class MaxDiffPairTest {
         int[] input = {-10, 10};
         MaxDiffPair maxDiffPair = new MaxDiffPairImpl();
         MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
-        int ans = Math.abs(pair.x - pair.y);
-        Assert.assertEquals(20, ans);
+        Assert.assertEquals(-10, pair.x);
+        Assert.assertEquals(10, pair.y);
     }
 
     @Test
@@ -59,6 +59,7 @@ public class MaxDiffPairTest {
             MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
             fail("Method didn't throw IllegalArgumentException");
         } catch (IllegalArgumentException e) {
+            // OK, expected exception
         }
     }
 
@@ -70,6 +71,7 @@ public class MaxDiffPairTest {
             MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
             fail("Method didn't throw IllegalArgumentException");
         } catch (IllegalArgumentException e) {
+            // OK, expected exception
         }
     }
 
