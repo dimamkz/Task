@@ -16,6 +16,31 @@ public class MaxDiffPairTest {
     }
 
     @Test
+    public void testEqualElements() {
+        int[] input = {1, 1, 1, 1, 1};
+        MaxDiffPair maxDiffPair = new MaxDiffPairImpl();
+        MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
+        Assert.assertEquals(1, pair.x);
+        Assert.assertEquals(1, pair.y);
+    }
+    @Test
+    public void tesPairFromLeft() {
+        int[] input = {-1,10, 1, 1, 1};
+        MaxDiffPair maxDiffPair = new MaxDiffPairImpl();
+        MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
+        Assert.assertEquals(-1, pair.x);
+        Assert.assertEquals(10, pair.y);
+    }
+    @Test
+    public void tesPairFromRight() {
+        int[] input = { 1, 1, 1,-1,10};
+        MaxDiffPair maxDiffPair = new MaxDiffPairImpl();
+        MaxDiffPair.Pair pair = maxDiffPair.getMax(input);
+        Assert.assertEquals(-1, pair.x);
+        Assert.assertEquals(10, pair.y);
+    }
+
+    @Test
     public void testSmallSequence() {
         int[] input = {-10, -5, -11, 2, 0, 3, 5, 9, 15};
         MaxDiffPair maxDiffPair = new MaxDiffPairImpl();
